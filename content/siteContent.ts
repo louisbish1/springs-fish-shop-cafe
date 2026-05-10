@@ -260,7 +260,7 @@ export const siteContent = {
     copyright: '© 2026 Springs Fish Shop & Café. All rights reserved.',
     socialLinks: [
       { label: 'Instagram', href: 'https://www.instagram.com/springs.fish.shop/' },
-      { label: 'Facebook', href: 'https://www.facebook.com/search/top?q=springs%20fish%20shop%20and%20cafe' },
+      { label: 'Facebook', href: 'https://www.facebook.com/share/19nCRx7xjE/?mibextid=wwXIfr' },
     ],
     reviewLink: {
       label: 'Read our Google reviews',
