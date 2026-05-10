@@ -18,7 +18,7 @@ export const siteContent = {
   },
   nav: {
     brand: 'Springs Fish Shop & Café',
-    logo: '/images/logo.png',
+    logo: '/images/logo-transparent.png',
     logoAlt: 'Springs Fish Shop and Café logo',
     links: [
       { label: 'Home', href: '/' },

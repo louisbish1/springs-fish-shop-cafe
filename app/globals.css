@@ -46,10 +46,6 @@ img {
   max-width: 100%;
 }
 
-.site-logo {
-  mix-blend-mode: multiply;
-}
-
 .container {
   width: min(1200px, calc(100% - 2rem));
   margin-inline: auto;
