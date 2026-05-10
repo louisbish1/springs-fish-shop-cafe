@@ -5,14 +5,14 @@ const ourPhilosophyBody = [
 
 const seafoodBody = [
   'Our seafood is sourced fresh and prepared daily at our fish counter. We offer a changing selection of seasonal fish and traditional favourites, prepared with care and attention to quality.',
-  'From everyday staples to specialty catches, everything we sell is selected for freshness, flavour, and simplicity.',
+  'From everyday staples to speciality catches, everything we sell is selected for freshness, flavour, and simplicity.',
 ];
 
 export const siteContent = {
   meta: {
     title: 'Springs Fish Shop & Café',
     description: 'Springs Fish Shop & Café in West Sussex. Fresh fish, classic British food and a traditional local café.',
-    url: 'https://springsfishshop.uk',
+    url: 'https://springsfishshop.com',
     image: '/images/fish-counter.jpeg',
     keywords: ['fishmonger', 'café', 'smoked fish', 'seafood', 'West Sussex'],
   },
@@ -102,7 +102,7 @@ export const siteContent = {
         description: 'Seasonal plates, warm dishes and fish-led lunches.',
         items: [
           { name: 'Quiche of the Day', description: 'Served with fried new potatoes, side salad and homemade coleslaw.', price: '£9.95' },
-          { name: 'Salad Platter', description: 'Smoked or peppered mackerel fillet, salmon in Marie Rose sauce, garlic or chilli prawn skewers, tuna mayo, prawn and crab mayo, or dressed crab with £4 supplement.', price: '£9.95' },
+          { name: 'Salad Platter', description: 'Smoked or peppered mackerel fillet, prawns in Marie Rose sauce, chilli and garlic prawn skewers, tuna mayo, prawn and crab mayo, or dressed crab with £4 supplement.', price: '£9.95' },
           { name: 'Welsh Rarebit', description: 'Buck rarebit available with a poached egg for £1.', price: '£7.95' },
           { name: 'Smoked Haddock Chowder', description: 'Homemade and served with a toasted roll and butter.', price: '£7.50' },
         ],
@@ -176,6 +176,10 @@ export const siteContent = {
     image: '/images/fish-counter-wide.jpeg',
     imageAlt: 'Fish counter at Springs Fish Shop and Café.',
     note: 'Stock varies seasonally and weekly depending on availability.',
+    sourcing: {
+      heading: 'Sourcing',
+      body: 'Our fresh fish and seafood is supplied in partnership with MCB Seafoods in Brighton. They are our primary seafood supplier, helping us keep the counter consistent, fresh and carefully handled each day.',
+    },
     categories: [
       {
         name: 'Fresh Fish',
@@ -216,11 +220,15 @@ export const siteContent = {
     sections: [
       {
         title: 'A traditional fishmonger and café',
-        body: 'Springs Fish Shop & Café is a traditional West Sussex fishmonger and café serving fresh fish, seafood and classic homemade food from our shop on Edburton Road. The fish counter is at the heart of the business, with simple preparation, honest service and a focus on freshness.',
+        body: 'Springs Fish Shop & Café is a traditional West Sussex fishmonger and café serving fresh fish, seafood and classic homemade food from our shop on Edburton Road. The fish counter is at the heart of the business, supplied in partnership with MCB Seafoods and run with simple preparation, honest service and a focus on freshness.',
       },
       {
         title: 'Local, simple and welcoming',
         body: 'Alongside the fish shop, the café offers freshly prepared English breakfasts, sandwiches, sausage rolls and uncomplicated meals made for everyday visits. It is a local place to collect fish, sit down for food and feel part of the community.',
+      },
+      {
+        title: 'Oak smoke tradition',
+        body: 'Set at the foot of the South Downs, Springs carries forward a local food tradition shaped by fish, smoke and careful craft. Oak smoking has been part of the Springs story for decades, and we are honouring that tradition as we prepare to smoke our own fish again very soon.',
       },
       {
         title: 'Our Philosophy',
@@ -250,6 +258,14 @@ export const siteContent = {
   },
   footer: {
     copyright: '© 2026 Springs Fish Shop & Café. All rights reserved.',
+    socialLinks: [
+      { label: 'Instagram', href: 'https://www.instagram.com/springs.fish.shop/' },
+      { label: 'Facebook', href: 'https://www.facebook.com/search/top?q=springs%20fish%20shop%20and%20cafe' },
+    ],
+    reviewLink: {
+      label: 'Read our Google reviews',
+      href: 'https://www.google.com/maps/search/?api=1&query=Springs%20Fish%20Shop%20and%20Cafe%20Edburton',
+    },
     columns: [
       {
         heading: 'Contact',

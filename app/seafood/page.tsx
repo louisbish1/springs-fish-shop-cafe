@@ -26,6 +26,11 @@ export default function SeafoodPage() {
           <p className="text-sm uppercase tracking-[0.24em] text-charcoal">{siteContent.seafood.note}</p>
         </div>
 
+        <section className="rounded-3xl border border-black/5 bg-white p-8 shadow-soft sm:p-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-smoke">{siteContent.seafood.sourcing.heading}</p>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-smoke">{siteContent.seafood.sourcing.body}</p>
+        </section>
+
         <div className="space-y-12">
           {siteContent.seafood.categories.map((category) => (
             <section key={category.name} className="grid gap-8 border-t border-black/10 pt-8 lg:grid-cols-[0.7fr_1.3fr]">

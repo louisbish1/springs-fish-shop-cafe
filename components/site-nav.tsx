@@ -20,7 +20,7 @@ export function SiteNav() {
               </Link>
             ))}
           </nav>
-          {hasLogo ? <img src={siteContent.nav.logo} alt={siteContent.nav.logoAlt} className="h-10 w-10 object-contain" /> : null}
+          {hasLogo ? <img src={siteContent.nav.logo} alt={siteContent.nav.logoAlt} className="site-logo h-10 w-10 object-contain" /> : null}
         </div>
       </div>
     </header>
