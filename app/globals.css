@@ -81,23 +81,23 @@ img {
 
 .motion-eyebrow,
 .motion-heading {
-  animation: editorialFadeUp 1150ms var(--ease-editorial) both;
+  animation: editorialReveal 980ms var(--ease-editorial) both;
 }
 
 .motion-body {
-  animation: editorialFadeUpSoft 1250ms var(--ease-editorial) both;
+  animation: editorialReveal 1040ms var(--ease-editorial) both;
 }
 
 .motion-eyebrow {
-  animation-delay: 120ms;
+  animation-delay: 80ms;
 }
 
 .motion-heading {
-  animation-delay: 260ms;
+  animation-delay: 160ms;
 }
 
 .motion-body {
-  animation-delay: 420ms;
+  animation-delay: 260ms;
 }
 
 .editorial-image {
@@ -145,25 +145,14 @@ textarea:focus-visible {
   margin-inline: auto;
 }
 
-@keyframes editorialFadeUp {
+@keyframes editorialReveal {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    filter: blur(1.5px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes editorialFadeUpSoft {
-  from {
-    opacity: 0;
-    transform: translateY(3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
