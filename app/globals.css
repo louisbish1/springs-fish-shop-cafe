@@ -81,23 +81,23 @@ img {
 
 .motion-eyebrow,
 .motion-heading {
-  animation: editorialReveal 980ms var(--ease-editorial) both;
+  animation: editorialReveal 1500ms var(--ease-editorial) both;
 }
 
 .motion-body {
-  animation: editorialReveal 1040ms var(--ease-editorial) both;
+  animation: editorialReveal 1650ms var(--ease-editorial) both;
 }
 
 .motion-eyebrow {
-  animation-delay: 80ms;
+  animation-delay: 140ms;
 }
 
 .motion-heading {
-  animation-delay: 160ms;
+  animation-delay: 320ms;
 }
 
 .motion-body {
-  animation-delay: 260ms;
+  animation-delay: 520ms;
 }
 
 .editorial-image {
