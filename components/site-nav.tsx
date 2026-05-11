@@ -7,6 +7,8 @@ import { siteContent } from '../content/siteContent';
 export function SiteNav() {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const downwardTravel = useRef(0);
+  const upwardTravel = useRef(0);
   const hideTimeout = useRef<number | null>(null);
   const showTimeout = useRef<number | null>(null);
 
@@ -28,6 +30,8 @@ export function SiteNav() {
     function showHeader() {
       clearHideTimeout();
       clearShowTimeout();
+      upwardTravel.current = 0;
+      downwardTravel.current = 0;
       showTimeout.current = window.setTimeout(() => setIsVisible(true), 90);
     }
 
@@ -40,7 +44,7 @@ export function SiteNav() {
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY < 96) {
+      if (currentScrollY < 120) {
         showHeader();
         lastScrollY.current = currentScrollY;
         return;
@@ -48,16 +52,26 @@ export function SiteNav() {
 
       const scrollDelta = currentScrollY - lastScrollY.current;
 
-      if (Math.abs(scrollDelta) < 18) {
+      if (Math.abs(scrollDelta) < 6) {
         return;
       }
 
       if (scrollDelta < 0) {
-        showHeader();
+        downwardTravel.current = 0;
+        upwardTravel.current += Math.abs(scrollDelta);
+
+        if (upwardTravel.current > 140) {
+          showHeader();
+        }
       } else {
+        upwardTravel.current = 0;
+        downwardTravel.current += scrollDelta;
         clearShowTimeout();
-        clearHideTimeout();
-        hideTimeout.current = window.setTimeout(() => setIsVisible(false), 180);
+
+        if (currentScrollY > 220 && downwardTravel.current > 90) {
+          clearHideTimeout();
+          hideTimeout.current = window.setTimeout(() => setIsVisible(false), 220);
+        }
       }
 
       lastScrollY.current = currentScrollY;
