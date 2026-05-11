@@ -8,6 +8,7 @@ export function SiteNav() {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const hideTimeout = useRef<number | null>(null);
+  const showTimeout = useRef<number | null>(null);
 
   useEffect(() => {
     function clearHideTimeout() {
@@ -17,9 +18,17 @@ export function SiteNav() {
       }
     }
 
+    function clearShowTimeout() {
+      if (showTimeout.current) {
+        window.clearTimeout(showTimeout.current);
+        showTimeout.current = null;
+      }
+    }
+
     function showHeader() {
       clearHideTimeout();
-      setIsVisible(true);
+      clearShowTimeout();
+      showTimeout.current = window.setTimeout(() => setIsVisible(true), 90);
     }
 
     function showNearTop(event: PointerEvent) {
@@ -46,8 +55,9 @@ export function SiteNav() {
       if (scrollDelta < 0) {
         showHeader();
       } else {
+        clearShowTimeout();
         clearHideTimeout();
-        hideTimeout.current = window.setTimeout(() => setIsVisible(false), 120);
+        hideTimeout.current = window.setTimeout(() => setIsVisible(false), 180);
       }
 
       lastScrollY.current = currentScrollY;
@@ -59,6 +69,7 @@ export function SiteNav() {
 
     return () => {
       clearHideTimeout();
+      clearShowTimeout();
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('pointerdown', showNearTop);
     };
@@ -72,8 +83,8 @@ export function SiteNav() {
         aria-hidden="true"
       />
       <header
-        className={`sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur-sm transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${
-          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-[82%] opacity-0'
+        className={`sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur-sm transition-[transform,opacity] duration-[1100ms] ease-[cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-[72%] opacity-0'
         }`}
         onMouseEnter={() => setIsVisible(true)}
         onFocusCapture={() => setIsVisible(true)}

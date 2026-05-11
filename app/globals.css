@@ -81,23 +81,23 @@ img {
 
 .motion-eyebrow,
 .motion-heading {
-  animation: editorialFadeUp 760ms var(--ease-editorial) both;
+  animation: editorialFadeUp 1150ms var(--ease-editorial) both;
 }
 
 .motion-body {
-  animation: editorialFadeUpSoft 820ms var(--ease-editorial) both;
+  animation: editorialFadeUpSoft 1250ms var(--ease-editorial) both;
 }
 
 .motion-eyebrow {
-  animation-delay: 60ms;
+  animation-delay: 120ms;
 }
 
 .motion-heading {
-  animation-delay: 140ms;
+  animation-delay: 260ms;
 }
 
 .motion-body {
-  animation-delay: 220ms;
+  animation-delay: 420ms;
 }
 
 .editorial-image {
@@ -148,7 +148,7 @@ textarea:focus-visible {
 @keyframes editorialFadeUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -159,7 +159,7 @@ textarea:focus-visible {
 @keyframes editorialFadeUpSoft {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(3px);
   }
   to {
     opacity: 1;
