@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ImageReveal } from '../components/image-reveal';
 import { siteContent } from '../content/siteContent';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
 
@@ -23,10 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body>
-        <ImageReveal />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
