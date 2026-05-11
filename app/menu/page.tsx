@@ -16,7 +16,7 @@ export default function MenuPage() {
           <img
             src={siteContent.menu.image}
             alt={siteContent.menu.imageAlt}
-            className="h-72 w-full rounded-3xl object-cover shadow-soft"
+            className="editorial-image h-72 w-full rounded-3xl object-cover shadow-soft"
           />
         </div>
       </section>
@@ -24,9 +24,9 @@ export default function MenuPage() {
       <section className="container space-y-20 pb-24">
         {siteContent.menu.categories.map((category) => (
           <div key={category.id} className="grid gap-8 border-t border-black/10 pt-10 lg:grid-cols-[0.75fr_1.25fr]">
-            <div className="space-y-4">
-              <p className="text-xs uppercase tracking-[0.3em] text-smoke">{category.name}</p>
-              <p className="max-w-xl text-sm leading-7 text-smoke">{category.description}</p>
+            <div className="motion-group space-y-4">
+              <p className="motion-eyebrow text-xs uppercase tracking-[0.3em] text-smoke">{category.name}</p>
+              <p className="motion-body max-w-xl text-sm leading-7 text-smoke">{category.description}</p>
             </div>
             <div className="grid gap-x-10 gap-y-6 md:grid-cols-2">
               {category.items.map((item) => (
@@ -46,11 +46,11 @@ export default function MenuPage() {
           <img
             src={siteContent.menu.cakesFeature.image}
             alt={siteContent.menu.cakesFeature.imageAlt}
-            className="h-64 w-full rounded-2xl object-cover"
+            className="editorial-image h-64 w-full rounded-2xl object-cover"
           />
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-smoke">{siteContent.menu.cakesFeature.heading}</p>
-            <p className="max-w-xl text-sm leading-7 text-smoke">{siteContent.menu.cakesFeature.body}</p>
+          <div className="motion-group space-y-4">
+            <p className="motion-eyebrow text-xs uppercase tracking-[0.3em] text-smoke">{siteContent.menu.cakesFeature.heading}</p>
+            <p className="motion-body max-w-xl text-sm leading-7 text-smoke">{siteContent.menu.cakesFeature.body}</p>
           </div>
         </aside>
       </section>

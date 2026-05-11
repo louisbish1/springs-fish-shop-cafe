@@ -46,6 +46,82 @@ img {
   max-width: 100%;
 }
 
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.35rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.45);
+  transform-origin: center;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  opacity: 0.7;
+  transform: scaleX(1);
+}
+
+.motion-eyebrow,
+.motion-heading {
+  animation: editorialFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-body {
+  animation: editorialFadeUpSoft 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.motion-eyebrow {
+  animation-delay: 80ms;
+}
+
+.motion-heading {
+  animation-delay: 180ms;
+}
+
+.motion-body {
+  animation-delay: 300ms;
+}
+
+.editorial-image {
+  animation: editorialImageIn 1000ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+  transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1), opacity 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.rounded-full,
+button {
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.rounded-full:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+a.rounded-full:active,
+button:active {
+  transform: translateY(0) scale(0.985);
+}
+
+input,
+textarea {
+  transition: border-color 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1), background-color 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px rgba(17, 17, 17, 0.06);
+}
+
 .container {
   width: min(1200px, calc(100% - 2rem));
   margin-inline: auto;
@@ -58,4 +134,59 @@ img {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes editorialFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    letter-spacing: 0.04em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialFadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialImageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .editorial-image:hover {
+    transform: scale(1.015);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
