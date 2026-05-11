@@ -79,27 +79,6 @@ img {
   transform: scaleX(1);
 }
 
-.motion-eyebrow,
-.motion-heading {
-  animation: editorialReveal 1500ms var(--ease-editorial) both;
-}
-
-.motion-body {
-  animation: editorialReveal 1650ms var(--ease-editorial) both;
-}
-
-.motion-eyebrow {
-  animation-delay: 140ms;
-}
-
-.motion-heading {
-  animation-delay: 320ms;
-}
-
-.motion-body {
-  animation-delay: 520ms;
-}
-
 .editorial-image {
   opacity: 1;
   transform: translateY(0);
@@ -143,17 +122,6 @@ textarea:focus-visible {
 .container {
   width: min(1200px, calc(100% - 2rem));
   margin-inline: auto;
-}
-
-@keyframes editorialReveal {
-  from {
-    opacity: 0;
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
