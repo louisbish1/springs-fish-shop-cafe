@@ -7,28 +7,49 @@ import { siteContent } from '../content/siteContent';
 export function SiteNav() {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const hideTimeout = useRef<number | null>(null);
 
   useEffect(() => {
+    function clearHideTimeout() {
+      if (hideTimeout.current) {
+        window.clearTimeout(hideTimeout.current);
+        hideTimeout.current = null;
+      }
+    }
+
+    function showHeader() {
+      clearHideTimeout();
+      setIsVisible(true);
+    }
+
     function showNearTop(event: PointerEvent) {
       if (event.clientY < 72) {
-        setIsVisible(true);
+        showHeader();
       }
     }
 
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY < 32) {
-        setIsVisible(true);
+      if (currentScrollY < 96) {
+        showHeader();
         lastScrollY.current = currentScrollY;
         return;
       }
 
-      if (Math.abs(currentScrollY - lastScrollY.current) < 8) {
+      const scrollDelta = currentScrollY - lastScrollY.current;
+
+      if (Math.abs(scrollDelta) < 18) {
         return;
       }
 
-      setIsVisible(currentScrollY < lastScrollY.current);
+      if (scrollDelta < 0) {
+        showHeader();
+      } else {
+        clearHideTimeout();
+        hideTimeout.current = window.setTimeout(() => setIsVisible(false), 120);
+      }
+
       lastScrollY.current = currentScrollY;
     }
 
@@ -37,6 +58,7 @@ export function SiteNav() {
     window.addEventListener('pointerdown', showNearTop, { passive: true });
 
     return () => {
+      clearHideTimeout();
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('pointerdown', showNearTop);
     };
@@ -50,8 +72,8 @@ export function SiteNav() {
         aria-hidden="true"
       />
       <header
-        className={`sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur-sm transition-[transform,opacity] duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        className={`sticky top-0 z-20 border-b border-black/5 bg-cream/90 backdrop-blur-sm transition-[transform,opacity] duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none ${
+          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-[82%] opacity-0'
         }`}
         onMouseEnter={() => setIsVisible(true)}
         onFocusCapture={() => setIsVisible(true)}
