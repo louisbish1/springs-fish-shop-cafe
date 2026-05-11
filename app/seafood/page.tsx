@@ -13,7 +13,8 @@ export default function SeafoodPage() {
           <img
             src={siteContent.seafood.image}
             alt={siteContent.seafood.imageAlt}
-            className="h-72 w-full rounded-3xl object-cover shadow-soft"
+            decoding="async"
+            className="editorial-image h-72 w-full rounded-3xl object-cover shadow-soft"
           />
         </div>
       </section>

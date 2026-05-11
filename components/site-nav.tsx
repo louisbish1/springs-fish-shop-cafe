@@ -60,7 +60,7 @@ export function SiteNav() {
           <Link href="/" className="max-w-[18rem] text-xs font-semibold uppercase tracking-[0.28em] text-charcoal sm:max-w-none sm:tracking-[0.3em] sm:text-sm">
             {siteContent.nav.brand}
           </Link>
-          <div className="flex items-start justify-between gap-5 sm:items-center lg:flex-wrap lg:items-center lg:gap-x-6 lg:gap-y-3">
+          <div className="flex items-start justify-between gap-5 sm:items-center lg:flex-wrap lg:items-center lg:justify-start lg:gap-x-6 lg:gap-y-3">
             <nav className="flex max-w-[calc(100%-4rem)] flex-wrap items-center gap-x-5 gap-y-3 text-xs uppercase tracking-[0.18em] text-smoke sm:max-w-none sm:gap-x-6 sm:tracking-[0.2em]">
               {siteContent.nav.links.map((link) => (
                 <Link key={link.href} href={link.href} className="nav-link transition hover:text-charcoal">
@@ -68,7 +68,7 @@ export function SiteNav() {
                 </Link>
               ))}
             </nav>
-            <img src={siteContent.nav.logo} alt={siteContent.nav.logoAlt} className="site-logo mt-0.5 h-11 w-11 shrink-0 object-contain sm:h-10 sm:w-10 lg:mt-0" />
+            <img src={siteContent.nav.logo} alt={siteContent.nav.logoAlt} width="44" height="44" decoding="async" className="site-logo mt-0.5 h-11 w-11 shrink-0 object-contain sm:h-10 sm:w-10 lg:mt-0" />
           </div>
         </div>
       </header>

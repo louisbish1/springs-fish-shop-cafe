@@ -54,11 +54,15 @@ export default function HomePage() {
               <img
                 src={siteContent.home.cafe.foodImage}
                 alt={siteContent.home.cafe.foodImageAlt}
+                loading="lazy"
+                decoding="async"
                 className="h-64 w-full object-cover sm:h-72"
               />
               <img
                 src={siteContent.home.cafe.image}
                 alt={siteContent.home.cafe.imageAlt}
+                loading="lazy"
+                decoding="async"
                 className="h-64 w-full object-cover sm:h-72"
               />
             </div>

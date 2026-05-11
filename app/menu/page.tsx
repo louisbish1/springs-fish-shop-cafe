@@ -16,6 +16,7 @@ export default function MenuPage() {
           <img
             src={siteContent.menu.image}
             alt={siteContent.menu.imageAlt}
+            decoding="async"
             className="editorial-image h-72 w-full rounded-3xl object-cover shadow-soft"
           />
         </div>
@@ -46,6 +47,8 @@ export default function MenuPage() {
           <img
             src={siteContent.menu.cakesFeature.image}
             alt={siteContent.menu.cakesFeature.imageAlt}
+            loading="lazy"
+            decoding="async"
             className="editorial-image h-64 w-full rounded-2xl object-cover"
           />
           <div className="motion-group space-y-4">
