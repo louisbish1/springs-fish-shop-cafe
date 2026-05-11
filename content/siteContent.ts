@@ -264,8 +264,12 @@ export const siteContent = {
     ],
     reviewLink: {
       label: 'Read our Google reviews',
-      href: 'https://www.google.com/maps/search/?api=1&query=Springs%20Fish%20Shop%20and%20Cafe%20Edburton',
+      href: 'https://www.google.com/maps/search/?api=1&query=Springs%20Fish%20Shop%20and%20Cafe%2C%20Edburton%20Road%2C%20Edburton%2C%20Henfield%2C%20BN5%209LN',
     },
+    legalLinks: [
+      { label: 'Privacy Notice', href: '/privacy' },
+      { label: 'Google reviews', href: 'https://www.google.com/maps/search/?api=1&query=Springs%20Fish%20Shop%20and%20Cafe%2C%20Edburton%20Road%2C%20Edburton%2C%20Henfield%2C%20BN5%209LN' },
+    ],
     columns: [
       {
         heading: 'Contact',
@@ -288,6 +292,32 @@ export const siteContent = {
           { label: 'Seafood', href: '/seafood' },
           { label: 'Contact', href: '/contact' },
         ],
+      },
+    ],
+  },
+  privacy: {
+    heading: 'Privacy Notice',
+    intro: 'This notice explains how Springs Fish Shop & Café handles personal information shared through this website.',
+    sections: [
+      {
+        title: 'Information we collect',
+        body: 'When you contact us or place an order request, we may collect your name, phone number, email address, preferred collection details and the message or order details you choose to send.',
+      },
+      {
+        title: 'How we use it',
+        body: 'We use this information only to respond to enquiries, confirm order availability, arrange collection and provide payment details or an invoice where needed.',
+      },
+      {
+        title: 'How it is handled',
+        body: 'Order and contact form submissions are processed by our form handling provider and sent to the business email account. We do not sell personal information or use it for unrelated marketing.',
+      },
+      {
+        title: 'Retention',
+        body: 'We keep messages only for as long as reasonably needed to manage enquiries, orders and basic business records.',
+      },
+      {
+        title: 'Contact',
+        body: 'For questions about your information, contact Springs Fish Shop & Café using the phone number or email address shown on the Contact page.',
       },
     ],
   },

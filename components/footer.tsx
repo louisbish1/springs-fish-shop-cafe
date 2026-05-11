@@ -66,8 +66,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-black/10 pt-6 text-xs uppercase tracking-[0.22em] text-smoke">
+        <div className="flex flex-col gap-4 border-t border-black/10 pt-6 text-xs uppercase tracking-[0.22em] text-smoke sm:flex-row sm:items-center sm:justify-between">
           <p>{siteContent.footer.copyright}</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {siteContent.footer.legalLinks.map((link) => {
+              const isExternal = link.href.startsWith('http');
+
+              return isExternal ? (
+                <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="transition hover:text-charcoal">
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.href} href={link.href} className="transition hover:text-charcoal">
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </footer>
